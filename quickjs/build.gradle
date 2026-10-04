@@ -1,0 +1,25 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace "com.fongmi.android.tv.quickjs"
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 28
+    }
+
+    lint {
+        disable 'UnsafeOptInUsageError'
+    }
+}
+
+dependencies {
+    implementation project(':catvod')
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'wang.harlon.quickjs:wrapper-java:1.0.0'
+    implementation 'net.sourceforge.streamsupport:android-retrofuture:1.7.4'
+    implementation(ext: 'aar', name: 'quickjs', group: 'fongmi', version: 'release')
+}

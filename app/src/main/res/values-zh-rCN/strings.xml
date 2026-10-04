@@ -1,0 +1,316 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+
+    <!-- App -->
+    <string name="app_name">极速影视</string>
+    <string name="app_exit">再按一次返回键退出</string>
+
+    <!-- Vod -->
+    <string name="vod_last">上次看到<xliff:g name="name">%s</xliff:g></string>
+
+    <!-- Live -->
+    <string name="live_pass">密码</string>
+    <string name="live_line">线路 <xliff:g name="name">%s</xliff:g></string>
+
+    <!-- Detail -->
+    <string name="detail_title"><xliff:g name="name">%s</xliff:g>：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_site">站源：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_year">年份：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_area">地区：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_type">类型：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_director">导演：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_actor">演员：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_content">简介：<xliff:g name="name">%s</xliff:g></string>
+    <string name="detail_desc">简介</string>
+
+    <!-- Keep -->
+    <string name="keep">收藏</string>
+    <string name="keep_add">已加入收藏</string>
+    <string name="keep_del">已取消收藏</string>
+
+    <!-- Play -->
+    <string name="play">播放</string>
+    <string name="play_op">片头</string>
+    <string name="play_ed">片尾</string>
+    <string name="play_next">下集</string>
+    <string name="play_prev">上集</string>
+    <string name="play_episodes">选集</string>
+    <string name="play_loop">循环</string>
+    <string name="play_timer">定时</string>
+    <string name="play_time">时间</string>
+    <string name="play_netspeed">网速</string>
+    <string name="play_duration">进度</string>
+    <string name="play_mini_progress">迷你</string>
+    <string name="play_video_title">标题</string>
+    <string name="play_danmu">弹幕</string>
+    <string name="play_display">屏显</string>
+    <string name="play_speed">倍速</string>
+    <string name="play_change">换源</string>
+    <string name="play_forward">→</string>
+    <string name="play_backward">←</string>
+    <string name="play_invert">反转</string>
+    <string name="play_across">跨类</string>
+    <string name="play_reverse">倒序</string>
+    <string name="play_track_text">字幕</string>
+    <string name="play_track_audio">音轨</string>
+    <string name="play_track_video">视轨</string>
+    <string name="play_forward_hint">已切换正序播放</string>
+    <string name="play_backward_hint">已切换倒序播放</string>
+    <string name="play_now">正在播放：<xliff:g name="name">%s</xliff:g></string>
+    <string name="play_ready">准备播放：<xliff:g name="name">%s</xliff:g></string>
+    <string name="play_switch_parse">正在切换解析至「<xliff:g name="name">%s</xliff:g>」</string>
+    <string name="play_switch_flag">正在切换线路至「<xliff:g name="name">%s</xliff:g>」</string>
+    <string name="play_switch_site">正在切换站源至「<xliff:g name="name">%s</xliff:g>」</string>
+
+    <!-- Parse -->
+    <string name="parse">解析</string>
+    <string name="parse_god">超级解析</string>
+    <string name="parse_from">解析来自：<xliff:g name="name">%s</xliff:g></string>
+
+    <!-- Push -->
+    <string name="push">推送</string>
+
+    <!-- Setting -->
+    <string name="setting_vod">点播</string>
+    <string name="setting_live">直播</string>
+    <string name="setting_wall">壁纸</string>
+    <string name="setting_player">播放设置</string>
+    <string name="setting_danmu">弹幕设置</string>
+    <string name="setting_custom">个性设置</string>
+    <string name="setting_config_cache">接口缓存</string>
+    <string name="setting_cache_dir">迅雷缓存</string>
+    <string name="setting_reset">重置App</string>
+    <string name="setting_quality">图片品质</string>
+    <string name="setting_size">图片尺寸</string>
+    <string name="setting_aggregated_search">聚合搜索</string>
+    <string name="setting_language">语言设置</string>
+    <string name="setting_parse_webview">嗅探内核</string>
+    <string name="setting_fullscreen_menu_key">全屏菜单键</string>
+    <string name="setting_home_menu_key">首页菜单键</string>
+    <string name="setting_home_site_lock">首页源锁定</string>
+    <string name="setting_incognito">无痕模式</string>
+    <string name="setting_site_search">站源搜索</string>
+    <string name="setting_remove_ad">AI去广告</string>
+    <string name="setting_small_window_back_key">小窗返回键</string>
+    <string name="setting_home_display_name">首页显示站源</string>
+    <string name="setting_home_ui">首页UI</string>
+    <string name="setting_home_buttons">首页按钮</string>
+    <string name="setting_doh">DoH</string>
+    <string name="setting_proxy">Proxy</string>
+    <string name="setting_cache">缓存</string>
+    <string name="setting_backup">备份</string>
+    <string name="setting_restore">恢复</string>
+    <string name="setting_version">版本</string>
+    <string name="setting_about">关于</string>
+    <string name="setting_storage">权限</string>
+    <string name="setting_off">关闭</string>
+    <string name="setting_on">开启</string>
+
+    <!-- Player -->
+    <string name="player">播放核心</string>
+    <string name="player_decode">解码方式</string>
+    <string name="player_render">渲染方式</string>
+    <string name="player_scale">缩放比例</string>
+    <string name="player_caption">字幕样式</string>
+    <string name="player_subtitle">字幕大小</string>
+    <string name="player_play_with_others">同时播放</string>
+    <string name="player_danmu_load">弹幕加载</string>
+    <string name="player_danmu_speed">弹幕速度</string>
+    <string name="player_danmu_size">弹幕大小</string>
+    <string name="player_danmu_line">弹幕行数</string>
+    <string name="player_danmu_alpha">弹幕透明</string>
+    <string name="player_danmu_sync">弹幕同步</string>
+    <string name="player_background">后台播放</string>
+    <string name="player_flag">线路播放</string>
+    <string name="player_episode">选集样式</string>
+    <string name="player_exo_tunnel">隧道模式</string>
+    <string name="player_exo_http">连线方式</string>
+    <string name="player_exo_buffer">缓冲时间</string>
+    <string name="player_rtsp">RTSP 通道</string>
+    <string name="player_ua">User-Agent</string>
+
+    <!-- Search -->
+    <string name="search_keyword">关键字…</string>
+    <string name="search_record">历史</string>
+    <string name="search_suggest">建议</string>
+    <string name="search_hot">热搜</string>
+
+    <!-- Dialog -->
+    <string name="dialog_edit">修改</string>
+    <string name="dialog_positive">确定</string>
+    <string name="dialog_negative">取消</string>
+    <string name="dialog_config_hint">请输入接口…</string>
+    <string name="dialog_config_name">请输入名称…</string>
+    <string name="dialog_config_url">请输入地址…</string>
+    <string name="dialog_delete_record">删除全部纪录？</string>
+    <string name="dialog_delete_keep">收藏纪录将会全部删除。</string>
+    <string name="dialog_delete_history">观看纪录将会全部删除。</string>
+    <string name="dialog_reset_app">重置App?</string>
+    <string name="dialog_reset_app_data">所有数据将会被重置，App即将被关闭.</string>
+    <string name="dialog_restore">还原备份数据？</string>
+    <string name="dialog_restore_msg">将会还原配置、观看纪录及各项设置。</string>
+
+    <!-- Error -->
+    <string name="error_config_get">配置取得失败</string>
+    <string name="error_config_parse">配置解析失败</string>
+    <string name="error_play_next">已经是最后一集了！</string>
+    <string name="error_play_prev">已经是第一集了！</string>
+    <string name="error_play_parse">播放地址解析失败</string>
+    <string name="error_play_url">播放地址加载失败\n错误代码：<xliff:g name="name">%s</xliff:g></string>
+    <string name="error_play_flag">暂无线路数据</string>
+    <string name="error_play_timeout">连接超时</string>
+    <string name="error_detail">暂无播放数据</string>
+    <string name="error_empty">找不到数据</string>
+
+    <!-- Update -->
+    <string name="update_version">发现新版本 <xliff:g name="name">%s</xliff:g></string>
+    <string name="update_check">正在检测更新…</string>
+    <string name="update_confirm">更新</string>
+
+    <!-- X5 WebView -->
+    <string name="x5webview_title">X5 WebView</string>
+    <string name="x5webview_download_enable">解压X5 WebView并启用?</string>
+    <string name="x5webview_enabled">X5 WebView已启用</string>
+    <string name="x5webview_parsing">X5 WebView嗅探中</string>
+
+    <!-- Crash -->
+    <string name="crash_info">发生意外错误\n抱歉给您带来不便</string>
+    <string name="crash_restart">重新启动</string>
+    <string name="crash_details">错误信息</string>
+    <string name="crash_details_title">错误信息</string>
+    <string name="crash_details_close">关闭</string>
+
+    <!-- Hint -->
+    <string name="copied">已复制</string>
+    <string name="backed">备份成功</string>
+    <string name="config_refreshed">接口已刷新</string>
+
+    <!-- UNIT -->
+    <string name="all">全部</string>
+    <string name="times">倍</string>
+    <string name="lines">行</string>
+
+    <string-array name="select_backup">
+        <item>自动</item>
+        <item>手动</item>
+    </string-array>
+
+    <string-array name="select_decode">
+        <item>软解</item>
+        <item>硬解</item>
+    </string-array>
+
+    <string-array name="select_player">
+        <item>系统</item>
+        <item>IJK</item>
+        <item>EXO</item>
+    </string-array>
+
+    <string-array name="select_danmu_speed">
+        <item>超慢</item>
+        <item>慢</item>
+        <item>适中</item>
+        <item>快</item>
+    </string-array>
+
+    <string-array name="select_quality">
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+    </string-array>
+
+    <string-array name="select_size">
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+        <item>特大</item>
+    </string-array>
+
+    <string-array name="select_scale">
+        <item>原始</item>
+        <item>16:9</item>
+        <item>4:3</item>
+        <item>填充</item>
+        <item>裁剪</item>
+    </string-array>
+
+    <string-array name="select_reset">
+        <item>刷新</item>
+        <item>重播</item>
+    </string-array>
+
+    <string-array name="select_exo_http">
+        <item>预设</item>
+        <item>OkHttp</item>
+    </string-array>
+
+    <string-array name="select_flag">
+        <item>自动</item>
+        <item>手动</item>
+    </string-array>
+
+    <string-array name="select_episode">
+        <item>单行</item>
+        <item>多行</item>
+    </string-array>
+
+    <string-array name="select_fullscreen_menu_key">
+        <item>控制栏</item>
+        <item>选集</item>
+    </string-array>
+
+    <string-array name="select_small_window_back_key">
+        <item>返回</item>
+        <item>焦点移动</item>
+    </string-array>
+
+    <string-array name="select_home_menu_key">
+        <item>选项弹窗</item>
+        <item>切换站源</item>
+        <item>切换线路</item>
+        <item>直播页面</item>
+        <item>历史页面</item>
+        <item>搜索页面</item>
+        <item>推送页面</item>
+        <item>收藏页面</item>
+        <item>设置页面</item>
+    </string-array>
+
+    <string-array name="select_language">
+        <item>英文</item>
+        <item>简体中文</item>
+        <item>繁体中文</item>
+    </string-array>
+
+    <string-array name="select_parse_webview">
+        <item>系统</item>
+        <item>X5 WebView</item>
+    </string-array>
+
+    <string-array name="select_home_recommend">
+        <item>播放历史</item>
+        <item>站点推荐</item>
+    </string-array>
+
+    <string-array name="select_home_ui">
+        <item>简洁风格</item>
+        <item>TVBox风格</item>
+    </string-array>
+
+    <string-array name="select_config_cache">
+        <item>关闭</item>
+        <item>12小时</item>
+        <item>24小时</item>
+    </string-array>
+
+    <string-array name="select_caption">
+        <item>预设</item>
+        <item>系统</item>
+    </string-array>
+
+    <string-array name="select_track">
+        <item>选择音轨</item>
+        <item>选择视轨</item>
+        <item>选择字幕</item>
+    </string-array>
+
+</resources>

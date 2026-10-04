@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "com.fongmi.android.tv"
+    compileSdk 35
+    flavorDimensions = ["default"]
+
+    defaultConfig {
+        applicationId "com.fongmi.android.tv"
+        minSdk 19
+        targetSdk 28
+        versionCode 250
+        versionName "2.5.0"
+        multiDexEnabled true
+        ndk { abiFilters "armeabi-v7a" }
+        resConfigs "zh", "zh-rCN"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    productFlavors {
+        leanback {
+            dimension "default"
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach { output ->
+            outputFileName = "${variant.productFlavors[0].name}.apk"
+        }
+    }
+
+    configurations.configureEach {
+        exclude group: 'org.eclipse.jetty.orbit', module: 'javax.servlet'
+        resolutionStrategy {
+            force 'com.squareup.okhttp3:okhttp:' + okhttpVersion
+            force 'com.squareup.okio:okio:' + okioVersion
+            force 'androidx.media:media:1.6.0'
+        }
+    }
+
+    lint {
+        disable 'UnsafeOptInUsageError'
+    }
+}
+
+dependencies {
+    implementation project(':hook')
+    implementation project(':catvod')
+    implementation project(':quickjs')
+    implementation project(':ijkplayer')
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.leanback:leanback:1.1.0-rc02'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.5.1'
+    implementation 'androidx.room:room-runtime:2.5.2'
+    implementation 'cat.ereza:customactivityoncrash:2.4.0'
+    implementation 'com.github.bassaer:materialdesigncolors:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.github.bumptech.glide:annotations:4.16.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.16.0'
+    implementation 'com.github.jahirfiquitiva:TextDrawable:1.0.3'
+    implementation 'com.github.YarikSOffice:lingver:1.3.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.net.cronet:cronet-okhttp:0.1.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.guolindev.permissionx:permissionx:1.7.1'
+    implementation 'com.github.YarikSOffice:lingver:1.3.0'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation files('libs/javax.servlet-3.0.0.jar')
+    implementation 'org.eclipse.jetty:jetty-client:8.1.22.v20160922'
+    implementation('org.eclipse.jetty:jetty-server:8.1.22.v20160922')
+    implementation('org.eclipse.jetty:jetty-servlet:8.1.22.v20160922')
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation('org.simpleframework:simple-xml:2.7.1') { exclude group: 'stax', module: 'stax-api' exclude group: 'xpp3', module: 'xpp3' }
+    def media3 = '1.2.1'
+    implementation "androidx.media3:media3-exoplayer:$media3"
+    implementation "androidx.media3:media3-exoplayer-dash:$media3"
+    implementation "androidx.media3:media3-exoplayer-hls:$media3"
+    implementation "androidx.media3:media3-exoplayer-rtsp:$media3"
+    implementation "androidx.media3:media3-exoplayer-smoothstreaming:$media3"
+    implementation "androidx.media3:media3-datasource:$media3"
+    implementation "androidx.media3:media3-extractor:$media3"
+    implementation "androidx.media3:media3-database:$media3"
+    implementation "androidx.media3:media3-ui:$media3"
+    implementation "androidx.media3:media3-common:$media3"
+    annotationProcessor 'androidx.room:room-compiler:2.5.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+}

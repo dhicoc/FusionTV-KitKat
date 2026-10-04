@@ -1,0 +1,52 @@
+[
+  {
+    "name": "MoonTVPlus（原内置，令牌脱敏）",
+    "status": 200,
+    "sites": 89,
+    "type01": 89,
+    "type3": 0,
+    "lives": 5,
+    "milliseconds": 2193,
+    "note": "桌面 HTTP/JSON 复核，未在电视逐站播放"
+  },
+  {
+    "name": "4K小盒子",
+    "status": 200,
+    "sites": 53,
+    "type01": 9,
+    "type3": 44,
+    "lives": 2,
+    "milliseconds": 750,
+    "note": "桌面 HTTP/JSON 复核，未在电视逐站播放"
+  },
+  {
+    "name": "Qist jsm",
+    "status": 200,
+    "sites": 149,
+    "type01": 15,
+    "type3": 134,
+    "lives": 3,
+    "milliseconds": 731,
+    "note": "桌面 HTTP/JSON 复核，未在电视逐站播放"
+  },
+  {
+    "name": "高天流云 0821",
+    "status": 200,
+    "sites": 86,
+    "type01": 7,
+    "type3": 79,
+    "lives": 16,
+    "milliseconds": 699,
+    "note": "桌面 HTTP/JSON 复核，未在电视逐站播放"
+  },
+  {
+    "name": "Lightconer 单仓聚合",
+    "status": 200,
+    "sites": 167,
+    "type01": 9,
+    "type3": 158,
+    "lives": 7,
+    "milliseconds": 722,
+    "note": "桌面 HTTP/JSON 复核，未在电视逐站播放"
+  }
+]

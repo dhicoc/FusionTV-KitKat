@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace "com.tvbus.engine"
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 28
+    }
+}
+
+dependencies {
+    implementation project(':catvod')
+}
