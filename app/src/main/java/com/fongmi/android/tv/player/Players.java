@@ -266,7 +266,7 @@ public class Players implements Player.Listener, IMediaPlayer.Listener, ParseCal
     }
 
     public boolean isRelease() {
-        return exoPlayer == null || ijkPlayer == null;
+        return isExo() ? exoPlayer == null : ijkPlayer == null;
     }
 
     public boolean isEmpty() {

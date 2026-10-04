@@ -11,8 +11,8 @@ android {
         applicationId "com.fongmi.android.tv"
         minSdk 19
         targetSdk 28
-        versionCode 250
-        versionName "2.5.0"
+        versionCode 251
+        versionName "2.5.0-kitkat.2"
         multiDexEnabled true
         ndk { abiFilters "armeabi-v7a" }
         resConfigs "zh", "zh-rCN"
@@ -68,6 +68,8 @@ android {
 
     lint {
         disable 'UnsafeOptInUsageError'
+        // GitHub sideload distribution retains the legacy runtime target.
+        disable 'ExpiredTargetSdkVersion'
     }
 }
 

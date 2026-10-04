@@ -1,5 +1,14 @@
 # 变更记录
 
+## v2.5.0-kitkat.2 · 2026-10-04
+
+- 修复 IJK 已初始化却被判为释放，恢复进度控件的位置、时长和缓冲刷新。
+- 播放页快速搜索/自动换源遍历全部合格站点，保留两线程并发，移除前十站截断。
+- 在 TLS Java 回调上声明 @Keep，防止 R8 删除 native GetMethodID 需要的方法。
+- GitHub 侧载构建精确禁用 ExpiredTargetSdkVersion 商店策略检查，其余 lint 和 targetSdk28 保留。
+- gradlew 规范为 LF / 100755，用 .gitattributes 保持换行约定。
+- versionCode251，Debug 签名沿用前版；新增可复用的 API19 集成检查入口 tools/regression/。
+
 ## 2026-10-04 · 首次公开源码
 
 相对 OK 影视 KitKat f4a5204：

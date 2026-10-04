@@ -1455,7 +1455,6 @@ public class VideoActivity extends BaseActivity implements CustomKeyDownVod.List
         mExecutor = Executors.newFixedThreadPool(2);
         for (Site site : VodConfig.get().getSites()) {
             if (isPass(site)) sites.add(site);
-            if (sites.size() >= 10) break;
         }
         for (Site site : sites) mExecutor.execute(() -> search(site, keyword));
     }

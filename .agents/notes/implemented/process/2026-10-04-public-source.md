@@ -25,3 +25,5 @@ TLS 库由随仓 native 源码以 NDK r23c / android-19 / armeabi-v7a 重建，�
 目标项目没有已有 .agents/notes；公开目录首次建立本篇过程决定，无冲突旧笔记。现有 THIRD_PARTY_NOTICES 属于旧自研 FusionTV 路线，不迁入新仓库；本仓库记录实际 OK KitKat 基线及作者自有 TLS 公开授权。
 
 本篇初次发布时仅附源码的发行边界，由 [测试 APK 发布](2026-10-04-test-apk-release.md) 部分取代；源码隔离、私人令牌移除、构建及接口证据范围等决定继续有效。
+
+[审查回归修复](../bug-fix/2026-10-04-review-regressions.md) 补齐播放器、搜索、JNI 和构建入口缺陷，并提供 API19 Debug 集成与混淆 Release TLS 验证；首次发布的历史验证范围保持原记录。

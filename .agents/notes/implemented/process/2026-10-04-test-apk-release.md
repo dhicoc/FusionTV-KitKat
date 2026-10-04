@@ -23,3 +23,5 @@ Status: implemented
 ## Audit
 
 本篇部分取代 [首次公开源码边界](2026-10-04-public-source.md) 的“暂不上传 APK”决定，其余源码整理与隐私边界继续有效。两篇互链，既有第三方来源与验证记录保留。
+
+[审查修复版](../bug-fix/2026-10-04-review-regressions.md) 延续 Debug 签名和公开配置边界，以新标签 v2.5.0-kitkat.2 和 versionCode251 提供可覆盖升级的安装包，保留旧发行资产。

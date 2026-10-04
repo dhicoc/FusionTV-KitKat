@@ -1,5 +1,7 @@
 package xiao.bu.tv;
 
+import androidx.annotation.Keep;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -78,7 +80,9 @@ public final class LegacyTlsSocket extends SSLSocket {
     }
 
     // JNI callbacks use a reusable 16 KiB array, never a callback per byte.
+    @Keep
     private int transportRead(byte[] bytes, int length) throws IOException { return wireIn.read(bytes, 0, length); }
+    @Keep
     private void transportWrite(byte[] bytes, int length) throws IOException { wireOut.write(bytes, 0, length); }
     private native long nativeCreate(String host, String[] suites) throws IOException;
     private native byte[][] nativeHandshake(long pointer) throws IOException;
