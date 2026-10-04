@@ -4,6 +4,12 @@
 
 这是 dhicoc 的独立修改版，非上游官方发行。公开整理日期：2026-10-04。项目源码遵循 [GPL-3.0](LICENSE.md)，原作者版权与第三方组件许可保持有效。
 
+## 下载 APK
+
+在 [Releases](https://github.com/dhicoc/FusionTV-KitKat/releases/tag/v2.5.0-kitkat.1) 下载 `FusionTV-KitKat-v2.5.0-kitkat.1-arm32-debug.apk` 即可安装，适用于 Android 4.4 / API 19 起的 ARM32 设备。下载页同时提供 APK 的 SHA-256 校验文件。
+
+当前提供的是 **Debug 测试包**，使用 Android 调试证书，保留 debuggable；应用代码与该 Release 的源码标签一致。本次已验证构建、包元数据、API19 签名兼容性及私人令牌移除，尚未重新进行 API19 设备播放验收。安装后按下面的手机扫码步骤配置接口。
+
 ## 适用设备
 
 - Android 4.4 / API 19 起；仅打包 `armeabi-v7a`。
