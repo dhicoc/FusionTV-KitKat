@@ -20,6 +20,8 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses >/dev/null
       - name: Install Android SDK packages
         run: |
           sdkmanager "platform-tools" "platforms;android-35" "build-tools;36.0.0"
@@ -32,3 +34,4 @@ jobs:
           name: FusionTV-KitKat-debug-apk
           path: app/build/outputs/apk/leanback/debug/leanback.apk
           if-no-files-found: error
+
