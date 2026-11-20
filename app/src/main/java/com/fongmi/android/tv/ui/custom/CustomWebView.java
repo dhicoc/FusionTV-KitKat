@@ -26,21 +26,17 @@ import com.fongmi.android.tv.App;
 import com.fongmi.android.tv.Constant;
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.Setting;
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.impl.ParseCallback;
 import com.fongmi.android.tv.ui.dialog.WebDialog;
 import com.fongmi.android.tv.utils.Sniffer;
-import com.fongmi.android.tv.utils.UrlUtil;
-import com.github.catvod.crawler.Spider;
 import com.google.common.net.HttpHeaders;
 import com.orhanobut.logger.Logger;
+import com.github.catvod.crawler.Spider;
+import com.fongmi.android.tv.api.config.VodConfig;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class CustomWebView extends WebView implements DialogInterface.OnDismissListener {
 
@@ -48,7 +44,6 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
     private static final String BLANK = "about:blank";
 
     private Map<String, String> headers;
-    private WebResourceResponse empty;
     private ParseCallback callback;
     private WebDialog dialog;
     private Runnable timer;
@@ -69,7 +64,6 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
     @SuppressLint("SetJavaScriptEnabled")
     public void initSettings() {
         this.timer = () -> stop(true);
-        this.empty = new WebResourceResponse("text/plain", "utf-8", new ByteArrayInputStream("".getBytes()));
         getSettings().setSupportZoom(true);
         getSettings().setUseWideViewPort(true);
         getSettings().setDatabaseEnabled(true);
@@ -105,6 +99,7 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
     }
 
     private void checkHeader(String url, Map<String, String> headers) {
+        if (headers == null) return;
         for (String key : headers.keySet()) {
             if (HttpHeaders.USER_AGENT.equalsIgnoreCase(key)) getSettings().setUserAgentString(headers.get(key));
         }
@@ -115,20 +110,22 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
             @Override
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
-                String url = request.getUrl().toString();
-                String host = request.getUrl().getHost();
-                if (TextUtils.isEmpty(host) || isAd(host)) return empty;
-                Map<String, String> headers = request.getRequestHeaders();
+                Uri uri = request.getUrl();
+                String url = uri.toString();
+                // Read the preference on every request so toggling it takes effect immediately.
+                if (Setting.isRemoveAd() && WebViewRules.isAd(uri)) return WebViewRules.empty();
+                Map<String, String> requestHeaders = request.getRequestHeaders();
                 if (url.contains("challenges.cloudflare.com/turnstile")) App.post(() -> showDialog());
-                if (detect && url.contains("player/?url=")) onParseAdd(headers, url);
-                else if (isVideoFormat(url)) onParseSuccess(headers, url);
+                if (detect && url.contains("player/?url=")) onParseAdd(requestHeaders, url);
+                else if (isVideoFormat(url)) onParseSuccess(requestHeaders, url);
                 return super.shouldInterceptRequest(view, request);
             }
 
             @Override
             public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-                String host = UrlUtil.host(url);
-                if (TextUtils.isEmpty(host) || isAd(host)) return empty;
+                Uri uri = Uri.parse(url);
+                // API 19 uses this overload; keep the same ad-filter behavior as newer WebViews.
+                if (Setting.isRemoveAd() && WebViewRules.isAd(uri)) return WebViewRules.empty();
                 if (url.contains("challenges.cloudflare.com/turnstile")) App.post(() -> showDialog());
                 if (detect && url.contains("player/?url=")) onParseAdd(headers, url);
                 else if (isVideoFormat(url)) onParseSuccess(headers, url);
@@ -199,14 +196,6 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
         } else {
             loadUrl("javascript:" + script.get(0));
         }
-    }
-
-    private boolean isAd(String host) {
-        for (String ad : VodConfig.get().getAds()) if (host.contains(ad)) return true;
-        for (String ad : LiveConfig.get().getAds()) if (host.contains(ad)) return true;
-        for (String ad : VodConfig.get().getAds()) if (Pattern.compile(ad).matcher(host).find()) return true;
-        for (String ad : LiveConfig.get().getAds()) if (Pattern.compile(ad).matcher(host).find()) return true;
-        return false;
     }
 
     private boolean isVideoFormat(String url) {
